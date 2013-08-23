@@ -13,6 +13,7 @@
 @protocol SGHTTPAuthDelegate <NSObject>
 
 - (void)URLProtocol:(NSURLProtocol *)protocol didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+- (void)URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response;
 
 @end
 

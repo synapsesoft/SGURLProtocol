@@ -354,6 +354,11 @@ typedef enum {
             && [self.request.URL.scheme isEqualToString:@"https"]) {
             policy = NSURLCacheStorageNotAllowed;
         }
+      
+        if(AuthDelegate && [AuthDelegate respondsToSelector:@selector(URLProtocol:didReceiveResponse:)]){
+            [AuthDelegate URLProtocol:self didReceiveResponse:_URLResponse];
+        }
+      
         [self.client URLProtocol:self didReceiveResponse:_URLResponse cacheStoragePolicy:policy];
     }
 }
