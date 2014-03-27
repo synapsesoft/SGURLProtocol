@@ -261,7 +261,7 @@ typedef enum {
         
         // If the response was an authentication failure, try to request fresh credentials.
         if (location &&((statusCode >= 301 && statusCode <= 303) || statusCode == 307 || statusCode == 308)) {
-            DLog(@"Redirect status code %d, Loc: %@", statusCode, location);
+            DLog(@"Redirect status code %ld, Loc: %@", (long)statusCode, location);
 
             NSURL *nextURL = [NSURL URLWithString:location relativeToURL:URL];
             if (nextURL) {
