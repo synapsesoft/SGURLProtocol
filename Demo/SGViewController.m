@@ -28,7 +28,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSURLRequest *r = [NSURLRequest requestWithURL:
                        [NSURL URLWithString:@"http://www.pagetutor.com/keeper/mystash/secretstuff.html"]
-                                       cachePolicy:NSURLCacheStorageAllowed
+                                       cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                    timeoutInterval:10.];
     self.webView.scalesPageToFit = YES;
     self.webView.delegate = self;
